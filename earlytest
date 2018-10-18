@@ -1,0 +1,40 @@
+import java.util.Scanner;
+import java.util.Date;
+
+public class ShowMe {
+
+  private static String name;
+  private static Date dateCreated;
+  
+  public static void main( String [] args) {
+    readData();
+    displayOutput();
+  
+  }
+  
+  public static void readData() {
+  
+    Scanner input = new Scanner(System.in);
+    
+    System.out.println("What's your name?");
+    name = input.nextLine();
+    
+    dateCreated = new Date();
+  
+  }
+  
+  public static void displayOutput() {
+    
+    System.out.printf("\n\t%-20s%-20s", "Name", name);
+    System.out.printf("\n\t%-20s%-20s", "Date", dateCreated.toString());
+  
+  
+  
+  }
+  
+  
+
+
+
+
+}
