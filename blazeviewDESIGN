@@ -1,0 +1,31 @@
+//relocating old classes
+<html>
+<head>
+
+<h1>
+Welcome to BlazeView!
+</h1>
+
+<hr>
+
+</head>
+<body>
+
+  <ol>  
+    <li>
+    list option in ordered list.... 
+    <\li>    
+  </ol>  
+  <ul>  
+    <li>
+    list item in unordered list....    
+    </li>  
+  </ul>  
+  <dl>
+    <dt>     items </dt>  
+    <dd>    items description  </dd>   
+  </dl> 
+  
+</body>
+
+</html>
