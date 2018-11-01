@@ -1,0 +1,18 @@
+<html>
+  <link href='malcolmstyle.css' rel='stylesheet'>
+  
+  <ul>
+  <li><a>Course Overview</a></li>
+  
+  //a complete course schedule of content covered during the time the students in the course...
+  
+  
+  <li><a>Contact Professor</a></li>
+  //build a contact page with the contact us templet so the students can contact the professor in that course... 
+  //define the call to action button/function "send" to be aurbitrary to the course selected....
+  
+
+  
+  
+  
+</html>
