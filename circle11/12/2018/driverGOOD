@@ -18,6 +18,25 @@ public class CircleTester{
     System.out.println( "circle is:");
     System.out.println(circle1);
     
+    //change the radius for circle1 to 20
+    circle1.setRadius(20);
+    
+    //display circle1
+    
+    System.out.println("3.\tUpdated Circle1:");
+    System.out.println(circle1);
+    
+    //update COURSE to CS 1301A   CANT BE DONE
+    //TRASH circle2
+    
+    circle2 = null;
+    
+    
+    //Try to display circle2
+    System.out.println("4.\tUpdated Circle 2:");
+    System.out.println(circle2);
+    
+    
     
   
   }
