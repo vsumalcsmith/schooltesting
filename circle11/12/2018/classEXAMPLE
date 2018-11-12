@@ -1,0 +1,63 @@
+public class Circle {
+  private double radius = 1;
+  private static int numberOfObjects = 0;
+  private final String COURSE = "CS1301";
+  
+  public Circle(){
+  
+  
+  }
+  
+  public Circle (double r){
+    setRadius(r);
+    numberOfObjects++;
+    
+    
+  
+  }
+  //Accessors
+  
+  public double getRadius(){
+    return radius;
+    
+  
+  }
+  
+  public int getNumberOfObjects(){
+    return numberOfObjects;
+  }
+  
+  public String getCourse(){
+    return COURSE;
+  }
+  
+  //Mutators
+  public void setRadius(double r){
+   if(r > 0)
+     radius = r;
+  }
+  
+  public double getArea(){
+    return Math.PI * radius * radius;
+  
+  }
+  
+  public double getPerimeter(){
+    return Math.PI * radius * 2;
+  }
+  
+   public String toString(){
+    String result = String.format("\n\t%-20s%10.2f" +
+                                  "\n\t%-20s%-20s" +
+                                  "\n\t%-20s%10.2f" +
+                                  "\n\t%-20s%7d",
+                                  "Radius", radius, 
+                                  "Course", COURSE,
+                                  "Area", getArea(),
+                                  "# of circles", numberOfObjects);
+    return result;                               
+                                  
+                                  
+  }
+
+}
