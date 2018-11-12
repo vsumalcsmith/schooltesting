@@ -1,9 +1,17 @@
 public class CircleTester{
   public static void main(String [] args){
+  
+  
     //Create a couple of circles
     Circle circle1 = new Circle();
+    System.out.println("1.\nNumber of Objects:"+Circle.getNumberOfObjects());
+    
     Circle circle2 = new Circle(5);
+    System.out.println("1.\nNumber of Objects:"+Circle.getNumberOfObjects());
+   
     Circle circle3 = new Circle(10);
+    System.out.println("1.\nNumber of Objects:"+Circle.getNumberOfObjects());
+  
     
     
     //Display circle
