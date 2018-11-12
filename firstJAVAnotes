@@ -1,0 +1,78 @@
+                //os = Operating System (Example: windows, linux, mac OS)
+        //6 RELATIONAL OPERATORS are       <  <=  >  >=  !=  ==                           //use for boolean in for loops
+                // there are SPECIAL SYMBOLS             []  {}  ""  ;  //  ()
+  // ANATOMY of JAVA      class name, main methods, statements, statments terminator, comments, reserved words, blocks 
+                
+                
+import java.util.*;
+import java.util.Scanner;
+import java.util.Date;
+
+
+public class TestNew{
+
+           //these are also data types that can be used in JAVA...  
+
+
+  private static String name;
+  private static int age;                                              // 32 bit size
+  private static double shoeSize;                           //64 special size..... 
+  private static Date dateCreated;
+  private static byte pointsOff;                                       // 8 bit size
+ //private static short;                                               //16 bit size
+  //private static boolean;
+  //private static float;                                   // 32 special size... 
+  //private static long;                                               //64 bit size
+  
+  public static void main(String [] args){
+  
+    readData();
+    displayOutput();
+  
+  }
+  
+  
+  public static void readData(){
+  
+                //always use this util pack to take user input... 
+  Scanner input = new Scanner(System.in);
+  
+  
+           //use STRING data type to hold words like the name example below.... 
+  System.out.println("What's your name?");
+  name = input.nextLine();
+  
+  System.out.println("Would you mind entering your age?");
+  age = input.nextInt();
+
+  
+           //use double to hold a large number of any kind.....(example: 56.8).....
+  System.out.println("What's the shoe size?");
+  shoeSize = input.nextDouble();
+  
+           //creating and using the dateCreated variable with the util pack to make it based on real time... 
+  dateCreated = new Date();
+  
+  
+        //data type byte allows the user to input a negative value... Example: from -128 to 127....
+  System.out.println("How many points did your teacher take off your work?");
+  pointsOff = input.nextByte();
+  
+  
+  }
+  
+
+  
+  
+  public static void displayOutput(){
+  
+  System.out.printf("\n\t%-20s%-20s", "Name:", name);
+  System.out.printf("\n\t%-20s%-20s", "Date:", dateCreated.toString());
+
+  
+  
+  }
+  
+
+
+}
