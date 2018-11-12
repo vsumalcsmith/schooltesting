@@ -4,8 +4,9 @@
   // ANATOMY of JAVA      class name, main methods, statements, statments terminator, comments, reserved words, blocks 
                 
                 
-import java.util.*;
+import java.util.*;  //explicit util pack that brings in all calsses at once.... 
 import java.util.Scanner;
+import java.util.Random; //import this util pack to use the Math.random() method to generate a random items in program... 
 import java.util.Date;
 
 
@@ -23,6 +24,7 @@ public class TestNew{
   //private static boolean;
   //private static float;                                   // 32 special size... 
   //private static long;                                               //64 bit size
+  //private static char;        //dont forget char is a data type that hold literals such as 'A'
   
   public static void main(String [] args){
   
