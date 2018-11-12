@@ -4,6 +4,8 @@ public class Circle {
   private final String COURSE = "CS1301";
   
   public Circle(){
+    numberOfObjects++;
+  
   
   
   }
@@ -23,7 +25,7 @@ public class Circle {
   
   }
   
-  public int getNumberOfObjects(){
+  public static int getNumberOfObjects(){
     return numberOfObjects;
   }
   
