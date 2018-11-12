@@ -1,0 +1,54 @@
+//math class
+    //class CONSTANTS     -PI  -E
+    //class METHODS       -Trigonometric Methods  -Exponent Methods  -Rouding Methods  -min, max, abs, and random methods
+    
+    
+    
+    
+    
+                                               //<<slide 6, 7, 8, 9 in PP #4>>//
+                                               
+                                               
+    
+    
+    
+    
+    
+
+
+import java.util.*;
+
+public class MathClass{
+
+  private static String;
+  private static int number, roundUPneg, roundDOWNneg;
+  private static double;
+  
+  
+  public static void main(String [] args){
+    displayOutput();
+  
+  }
+  
+  public static void displayOutput(){
+  
+    number = Math.pow(3,2);    
+    //number = 9 in this case....
+   
+    roundDOWNneg = Math.round(-2.2);
+    //roundDOWNneg = -2 in this case because it rounds down.... 
+    
+    roundUPceil = Math.ceil(2.3);
+    //roundUPceil = 3 in this case because it rounds up....
+    
+    
+   
+    roundUPneg = Math.round(-2.6);
+    //round = -3 in this case because it rounds up.....
+    
+    
+
+  
+  }
+
+}
