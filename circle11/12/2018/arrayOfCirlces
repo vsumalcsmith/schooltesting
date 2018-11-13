@@ -1,0 +1,51 @@
+import java.util.*;
+
+
+public class ArrayOfCircles{
+
+  public static void main (String [] args){
+  
+    //1. Declare an array to hold 5 Circle objects
+    Circle [] circles = new Circle[5];
+    
+    //2. Populate the array 
+    circles[0] = new Circle();
+    circles[1] = new Circle(5);
+    circles[2] = new Circle(4);
+    circles[3] = new Circle(10);
+    circles[4] = new Circle(20);
+    
+    
+    //3. display the areas of the circles
+    for(int i = 0; i < circles.length; i++){
+      System.out.printf("\n\t%10.2f", circles[i].getArea());
+      
+    } 
+    
+    //4. compute and display the total area for all circles
+    
+    double totalArea = 0;
+    
+    for (int i = 0; i < circles.length; i++){
+      totalArea += circles[i].getArea();
+    }  
+    System.out.printf("\n\t%-30s%10.2f","Total Area", totalArea);
+      
+      
+    //5. Change the radius for the circle in entry 0 to 11
+    
+    circles[0].setRadius(11);
+    
+    
+    //Display the radius for the circle in entry 0
+    
+    
+      
+    
+     
+    
+     
+  
+  }
+
+}
