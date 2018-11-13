@@ -68,8 +68,10 @@ public class TestNew{
   
   public static void displayOutput(){
   
-  System.out.printf("\n\t%-20s%-20s", "Name:", name);
-  System.out.printf("\n\t%-20s%-20s", "Date:", dateCreated.toString());
+    System.out.printf("\n\t%-20s%-20s", "Name:", name);
+    System.out.printf("\n\t%-20s%-20s", "course:", course);
+    System.out.printf("\n\t%-20s%-20s", "Date:", dateCreated.toString());
+    System.out.println(
 
   
   
