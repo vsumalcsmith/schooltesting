@@ -13,3 +13,6 @@ public class SimpleIfDemo {
       System.out.println("HiEven");
   }
 }
+
+
+//this if statement tells if the number is even or odd.... 
