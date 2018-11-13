@@ -5,13 +5,23 @@ public class ComputeAngles {
     Scanner input = new Scanner(System.in);
     
     // Prompt the user to enter three points
-    System.out.print("Enter three points: ");
+     System.out.print("Enter three points in the form of coordinate pair! The first value of x1 and y1 are? ");
+    
     double x1 = input.nextDouble();
     double y1 = input.nextDouble();
+    
+    System.out.print("The secound value of x2 and y2 are? ");
+
+    
     double x2 = input.nextDouble();
     double y2 = input.nextDouble();
+    
+    System.out.print("The secound value of x3 and y3 are? ");
+
     double x3 = input.nextDouble();
     double y3 = input.nextDouble();
+    
+
     
     // Compute three sides
     double a = Math.sqrt((x2 - x3) * (x2 - x3) 
