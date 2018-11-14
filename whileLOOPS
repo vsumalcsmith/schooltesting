@@ -1,0 +1,18 @@
+public class WhileLoops{
+  public static void main(String [] args){
+    myProgram();
+  
+  
+  }
+  
+  public myProgram(){
+    int count = 0;
+    while (count < 100) {
+      System.out.println("You are not done while loop");
+      count++;  
+    }
+  
+  }
+
+
+}
