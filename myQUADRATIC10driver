@@ -1,0 +1,84 @@
+//*****************************************************************
+//Purpose:  A driver to invoke and use QuadraticEquation10 methods
+//
+//Course:   CS 1301
+//Date:     11/14/2018
+//
+//Author:   Fares
+//****************************************************************
+public class MyQuadraticEquation10{
+   public static void main(String [ ] arg){
+      QuadraticEquation10 q0 = new QuadraticEquation10();
+      
+      System.out.println ("\n\t1.\tEquation 0 with default values (1, 1, 1)");
+      System.out.println (q0);
+      
+      double a1, b1, c1;
+      double a2, b2, c2;
+      double a3, b3, c3;
+      
+      //First equation
+      a1 = Double.parseDouble(arg[0]);
+      b1 = Double.parseDouble(arg[1]);
+      c1 = Double.parseDouble(arg[2]);
+      
+      QuadraticEquation10 q1 = new QuadraticEquation10(a1, b1, c1);
+      System.out.println ("\n\t2.\tEquation 1:");
+      displayDiscriminantAndRoots(q1);
+      System.out.println (q1);
+
+      //Second equation
+      a2 = Double.parseDouble(arg[3]);
+      b2 = Double.parseDouble(arg[4]);
+      c2 = Double.parseDouble(arg[5]);
+
+      QuadraticEquation10 q2 = new QuadraticEquation10(a2, b2, c2);
+      System.out.println ("\n\t3.\tEquation 2:");
+      displayDiscriminantAndRoots(q2);
+      System.out.println (q2); 
+           
+      //Third equation
+      a3 = Double.parseDouble(arg[6]);
+      b3 = Double.parseDouble(arg[7]);
+      c3 = Double.parseDouble(arg[8]);
+
+      QuadraticEquation10 q3 = new QuadraticEquation10(a3, b3, c3);
+      System.out.println ("\n\t4.\tEquation 3:");
+      displayDiscriminantAndRoots(q3);
+      System.out.println (q3);  
+      
+      //Use accessors
+      System.out.printf ("\n\t5.\t%-20s","Original Equation 0 Coefficients");
+      System.out.printf ("\n\t%-20s%5.2f","Coefficient a = ",q0.getA()); 
+      System.out.printf ("\n\t%-20s%5.2f","Coefficient b = ",q0.getB()); 
+      System.out.printf ("\n\t%-20s%5.2f","Coefficient c = ",q0.getC()); 
+      
+      //Update Equation0 Coefficients
+      q0.setA(10);
+      q0.setB(15);
+      q0.setC(25);
+      //Display Equation0 Updated Cooefficients
+      System.out.printf ("\n\n\t6.\t%-20s","Equation 0 Updated Coefficients");
+      System.out.printf ("\n\t%-20s%5.2f","Coefficient a = ",q0.getA()); 
+      System.out.printf ("\n\t%-20s%5.2f","Coefficient b = ",q0.getB()); 
+      System.out.printf ("\n\t%-20s%5.2f","Coefficient c = ",q0.getC());  
+     //Display Updated Equation0
+      System.out.println ("\n\t7.\tEquation 0:");
+      displayDiscriminantAndRoots(q0);
+      System.out.println (q0);    
+         
+   }//end main
+   
+   public static void displayDiscriminantAndRoots(QuadraticEquation10 q){
+      System.out.printf ("\n\t%-20s%10.2f","Discriminant:",q.getDiscriminant());
+      if (q.getDiscriminant()>0){
+            System.out.printf ("\n\t%-20s%10.2f","Root1:",q.getRoot1());
+            System.out.printf ("\n\t%-20s%10.2f","Root2:",q.getRoot2());
+      }else if (q.getDiscriminant()==0){
+            System.out.printf ("\n\t%-20s%10.2f","Root1 = Root2 =",q.getRoot1());
+      }
+      else
+         System.out.printf ("\n\t%-20s","No real solution");
+   }
+
+}//end class
