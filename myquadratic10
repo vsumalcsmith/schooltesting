@@ -1,0 +1,124 @@
+import java.io.*;
+import java.util.Scanner;
+import java.util.Arrays;
+
+
+public class QuadraticEquation10{
+  private static double a, b, c;
+  
+  public static void main(String [] args){
+    readData();
+    displayOutput();
+  
+  }
+  
+  
+  public static void readData(){
+    getDiscriminant();
+    getRoot1();
+    getRoot2();
+
+  
+  }
+  
+  public static void getDiscriminant(){
+  
+  
+  }
+  
+  public static void getRoot1(){
+  
+  
+  }
+  
+  public static void getRoot2(){
+  
+  
+  }
+  
+  public static void displayOutput(){
+  
+  System.out.println();
+    System.out.println();
+
+  
+  }
+  
+
+
+}
+
+//Sample input: 1.0 3  1  1 2.0 1  1.0 2.0  3.0
+//
+//Sample output:
+//1.	Equation 0 with default values (1, 1, 1)
+//
+//
+//	Equation:	1.0 X^2  + 1.0 X  +1.0
+//	Discriminant is negative. No real solution
+//
+//	2.	Equation 1:
+//
+//	Discriminant:             5.00
+//	Root1:                   -0.38
+//	Root2:                   -2.62
+//
+//	Equation:	1.0 X^2  + 3.0 X  +1.0
+//	Discriminant is:	5.00
+//	Root1 is        	-0.38
+//	Root2 is        	-2.62
+//
+//	3.	Equation 2:
+//
+//	Discriminant:             0.00
+//	Root1 = Root2 =          -1.00
+//
+//	Equation:	1.0 X^2  + 2.0 X  +1.0
+//	Discriminant is:	0.00
+//	Root1 is        	-1.00
+//	Root2 is        	-1.00
+//
+//	4.	Equation 3:
+//
+//	Discriminant:            -8.00
+//	No real solution    
+//
+//	Equation:	1.0 X^2  + 2.0 X  +3.0
+//	Discriminant is negative. No real solution
+//
+//	5.	Original Equation 0 Coefficients
+//	Coefficient a =      1.00
+//	Coefficient b =      1.00
+//	Coefficient c =      1.00
+//
+//	6.	Equation 0 Updated Coefficients
+//	Coefficient a =     10.00
+//	Coefficient b =     15.00
+//	Coefficient c =     25.00
+//	7.	Equation 0:
+//
+//	Discriminant:          -775.00
+//	No real solution    
+//
+//	Equation:	10.0 X^2  + 15.0 X  +25.0
+//	Discriminant is negative. No real solution
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//•	Attach (do not turn in any hardcopy) via BlazeView the following items:
+//a.	A single typed page with your name, class, date, and program title. The report should include what you learned from the programming assignment, problems faced, skills learned, and your observations.
+//b.	Simple output  
+//c.	UML diagram
+//d.	Zip and attach all your files
+//e.	Make sure that:
+//i.	The program is well documented and readable.
+//ii.	The output is well labeled and aligned
