@@ -1,0 +1,240 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class MyGrades9 {
+   //Declaration Section
+   private String courseName;       
+   private String instructorName;
+   private String semester;
+   private int year;
+   private String school;
+   private int numberOfStudents;
+   private int numberOfTests;
+   private String [] names;         //to hold students names
+   private int [][] scores;         //to hold students scores
+   private char [] grades;          //to hold students grades
+   private int [] studentsTotals;   //to hold students totals
+   private double [] testsAverages; //to hold tests averages
+   private int lowestScoreIndex;    //index of student with lowest total
+   private int highestScoreIndex;   //index of student with highest total
+   private Scanner infile;
+        
+
+   public MyGrades9 (Scanner scan){
+      
+      infile = scan;
+            
+      readCourseInfo();
+      readRecords();
+      computeStudentsTotals();
+      computeGrades();
+      computeTestsAverages();
+      findStudentWithLowestTotal();
+      findStudentWithHighestTotal();
+      printHeader();
+      displayStudentsRecords();
+      printFooter();
+      sortByTotal(); 
+      printHeader();
+      displayStudentsRecords();
+      printFooter();
+      displayMedianTotal();
+   }
+   //***********************************************************
+   //
+   //***********************************************************  
+   private void readCourseInfo(){
+      courseName = infile.nextLine();
+      instructorName = infile.nextLine();
+      school = infile.nextLine();
+      semester = infile.nextLine();
+      year = infile.nextInt();
+      numberOfStudents =infile.nextInt();
+      numberOfTests = infile.nextInt();
+      
+      
+      names = new String [numberOfStudents];
+      scores = new int [numberOfStudents][numberOfTests];
+      grades = new char [numberOfStudents];
+      studentsTotals = new int [numberOfStudents];
+      testsAverages = new double [numberOfTests];
+   }
+   
+   //***********************************************************
+   //
+   //***********************************************************
+   private void readRecords(){
+      int count = 0;
+      while (infile.hasNext()){
+         names[count] = infile.next();
+         for (int c = 0; c < scores[count].length; c++)
+            scores[count][c] = infile.nextInt();
+         count++;
+      }
+   }
+
+   //***********************************************************
+   //Document methods
+   //***********************************************************
+   private void computeStudentsTotals (){
+     int total;
+     for(int i = 0; i < numberOfStudents; i++){
+        total = 0;
+        for (int j = 0; j < numberOfTests; j++){
+           total += scores[i][j];
+           studentsTotals[i] = total;
+        }
+     }  
+   }
+   
+   //***********************************************************
+   //Document methods
+   //***********************************************************
+   private void computeTestsAverages(){
+      for (int column =0; column < scores[0].length; column++){
+         int total = 0;
+         for (int row = 0; row < scores.length; row++){
+            total += scores[row][column];
+            testsAverages[column] = (double) total/numberOfStudents;
+         }
+      }
+   }
+   
+   //***********************************************************
+   //Document methods
+   //***********************************************************
+   private void computeGrades () { 
+      for (int i = 0; i < names.length; i++){
+         if (studentsTotals[i]/numberOfTests >= 90){
+            grades[i] = 'A';
+         }
+         else if (studentsTotals[i]/numberOfTests >= 80){
+            grades[i] = 'B';
+         }
+         else if (studentsTotals[i]/numberOfTests >= 70){
+            grades[i] = 'C';
+         }
+         else if (studentsTotals[i]/numberOfTests >= 60){
+            grades[i] = 'D';
+         }
+         else{
+            grades[i] = 'F';
+         }
+      }
+   }
+   
+   //***********************************************************
+   //Document methods
+   //***********************************************************
+   private void findStudentWithLowestTotal(){
+      lowestScoreIndex = 0;
+      for (int i = 0; i < scores.length; i++){
+         if ((studentsTotals[i]/numberOfTests) < (studentsTotals[lowestScoreIndex]/numberOfTests)){
+            lowestScoreIndex = i;
+         }
+      }  
+   }
+   
+   private void findStudentWithHighestTotal(){
+      highestScoreIndex = 0;
+      for (int i = 0; i < scores.length; i++){
+         if ((studentsTotals[i]/numberOfTests) > (studentsTotals[highestScoreIndex]/numberOfTests)){
+            highestScoreIndex = i;
+         }
+      } 
+
+   }
+   
+   private void printHeader (){
+   }
+   
+   private void displayStudentsRecords(){
+      System.out.printf("\n\t%-10s%23s","Course Name:",courseName);
+      System.out.printf("\n\t%-10s%17s","Instructor's Name:",instructorName);
+      System.out.printf("\n\t%-10s%25s","Semester:",semester);
+      System.out.printf("\n\t%-10s%25d","Year:",year);
+      System.out.printf("\n\t%-10s%10s","School:",school);
+      System.out.println();
+      if (numberOfTests == 2){
+         System.out.printf("\n\t%-10s%-10s%-10s%-10s%-10s%-10s","Number","Names","Test1","Test2","Total","Grade");
+         for (int i = 0; i < numberOfStudents; i++){
+            System.out.printf("\n\t%-10d%-10s%-10d%-10d%-10d%-10c",(i+1), names[i],scores[i][0],scores[i][1],studentsTotals[i],grades[i]);
+         }
+         System.out.println();
+         System.out.printf("\n\tAverages" + "\t");
+         for (int i = 0; i < numberOfTests; i++){
+            System.out.print("  " + testsAverages[i] + " ");
+         }
+         System.out.println();
+         System.out.println("\n\tStudent with lowest Average" + "\n\t" + names[lowestScoreIndex]
+                         + "\t" + scores[lowestScoreIndex][0] + "\t" + scores[lowestScoreIndex][1] +"\t" + studentsTotals[lowestScoreIndex]
+                         + "\t" + grades[lowestScoreIndex]);
+         System.out.println("\n\tStudent with highest Average" + "\n\t" + names[highestScoreIndex]
+                         + "\t" + scores[highestScoreIndex][0] + "\t" + scores[highestScoreIndex][1]+ "\t" + studentsTotals[highestScoreIndex]
+                         + "\t" + grades[highestScoreIndex]);  
+       }
+       else{
+         System.out.printf("\n\t%-10s%-10s%-10s%-10s%-10s%-10s%-10s","Number","Names","Test1","Test2","Test3","Total","Grade");
+         for (int i = 0; i < numberOfStudents; i++){
+            System.out.printf("\n\t%-10d%-10s%-10d%-10d%-10d%-10d%-10c",(i+1), names[i],scores[i][0],scores[i][1],scores[i][2],studentsTotals[i],grades[i]);
+         }
+         System.out.println();
+         System.out.printf("\n\tAverages" + "\t");
+         for (int i = 0; i < numberOfTests; i++){
+            System.out.print("  " + testsAverages[i] + " ");
+         }
+         System.out.println();
+         System.out.println("\n\tStudent with lowest Average" + "\n\t" + names[lowestScoreIndex]
+                         + "\t" + scores[lowestScoreIndex][0] + "\t" + scores[lowestScoreIndex][1] + "\t" + scores[lowestScoreIndex][2] 
+                         +"\t" + studentsTotals[lowestScoreIndex]
+                         + "\t" + grades[lowestScoreIndex]);
+         System.out.println("\n\tStudent with highest Average" + "\n\t" + names[highestScoreIndex]
+                         + "\t" + scores[highestScoreIndex][0] + "\t" + scores[highestScoreIndex][1] + "\t" + scores[highestScoreIndex][2]
+                         + "\t" + studentsTotals[highestScoreIndex]
+                         + "\t" + grades[highestScoreIndex]); 
+       }
+   }
+   
+   private void printFooter (){
+   }
+   
+   private void sortByTotal(){
+   /*
+      for (int i = 1; i < studentsTotals.length; i++){
+         if (studentsTotals[0] > studentsTotals[i]){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+            //swap totals
+            int temp = studentsTotals[0];
+            studentsTotals[0] = studentsTotals[i];
+            studentsTotals[i] = temp;
+            
+            //swap grades
+            char gradeTemp = grades[0];
+            grades[0] = grades[i];
+            grades[i] = gradeTemp;
+            
+            //swap names
+            String namesTemp = names[0];
+            names[0] = names[i];
+            names[i] = namesTemp;
+            
+            //swap scores
+            
+            int scoresTemp = scores[0][0];
+            scores[0][0] = scores[i][0];
+            scores[i][0] = gradeTemp;
+            
+            int scores1Temp = scores[0][1];
+            scores[0][1] = scores[i][1];
+            scores[i][1] = gradeTemp;
+            
+            
+         }                
+      }
+   */ 
+   }
+   private void displayMedianTotal(){
+      sortByTotal();
+      int median = numberOfStudents/2;
+      System.out.printf("\n\t%-10s%-10d","Class Median Total:",studentsTotals[median]);
+   } 
+}
