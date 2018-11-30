@@ -1,0 +1,70 @@
+import java.util.*;
+
+import java.util.Scanner;
+import java.util.Date;
+//import java.util.Array;
+import java.io.*;
+
+
+public class basicStart{
+
+  private static String name;
+  private static String course;
+  private static Date dateCreated;
+  private static double age;
+  
+  public static void main(String [] args){
+    readData();
+    displayOutputln();
+    displayOutputf();
+    
+  
+  
+  }
+  
+  public static void readData(){
+  
+  Scanner input = new Scanner(System.in);
+  
+  System.out.println("What's your name?");
+  name = input.nextLine();
+  
+  System.out.println("What course are you in?");
+  course = input.nextLine();
+  
+  System.out.println("How old are you?");
+  age = input.nextDouble();
+  
+  dateCreated = new Date();
+  
+  
+  
+  
+  }
+  
+  public static void displayOutputln(){
+    System.out.println("This is basic System.out.println method");
+    System.out.println("Your name is:" + name);
+    System.out.println("The course you are currently taking is:"+ course);
+    System.out.println("Your current age is:"+ age);
+
+    System.out.println("Date:" + dateCreated.toString());
+
+  
+  }
+  
+  public static void displayOutputf(){
+    System.out.printf("\n\t%-20s%-20s", "These are the basic System.out.printf format here.");
+    System.out.printf("\n\t%-20s%-20s", "Name", name);
+    System.out.printf("\n\t%-20s%-20s", "Course", course);
+    //System.out.printf("\n\t%-20s%-20f", "Age", age);
+  
+    System.out.printf("\n\t%-20s%-20s", "Date", dateCreated.toString());
+   
+
+  
+  }
+
+
+}
+
