@@ -1,17 +1,22 @@
-import java.io.*;
-import java.util.Scanner;
-import java.util.Arrays;
-
 //**********************************************************
-//Purpose: 
+//Purpose: Use the basic methods larned throughout this course
+//         to define objects. The objects in the class below
+//         should be able to be called in the main driver!
+//   
 //         
-//Author: 
+//Author:   Malcolm Smith, Group #10
 //Class:    CS1301
 //Date:     11/28/2018
 //
 //**********************************************************
 
 import java.util.Scanner;
+import java.util.*;
+import java.util.Date;
+//import java.util.Array;
+import java.io.*;
+
+
 public class QuadraticEquation10{
    private double a;
    private double b;
@@ -58,7 +63,34 @@ public class QuadraticEquation10{
    public double getDiscriminant(){
       return ((b*b) - 4* a* c);
    }
-}//maybe this tag may fix the syntax error   
+   // fnding x1 using the formula -b + sqrt(b^2 - 4ac)/2a  
+   public double getRoot1(){
+      return (-b + Math.sqrt(getDiscriminant()))/(2*a);
+
+   }
+   // fnding x2 using the formula -b - sqrt(b^2 - 4ac)/2a 
+   public double getRoot2(){
+      return (-b - Math.sqrt(getDiscriminant()))/(2*a);
+   }
+
+//tostring method that returns formated statesments based on if Discriminate is positive or negative.
+   public String toString (){
+      String results="";
+      System.out.println();
+      System.out.print("\n\tEquation:\t"+a+"X^2+"+b+"X+"+c);
+      if(getDiscriminant() >=0){
+         System.out.printf ("\n\t%-20s%10.2f","Discriminant:",getDiscriminant());   
+         System.out.printf ("\n\t%-20s%10.2f","Root1:",getRoot1());
+         System.out.printf ("\n\t%-20s%10.2f","Root2:",getRoot2());
+         
+         }
+      else
+         System.out.printf ("\n\t%-20s","Discriminate is negative.No real solution");  
+
+      return results;
+   }
+
+}   
 
 //Sample input: 1.0 3  1  1 2.0 1  1.0 2.0  3.0
 //
