@@ -2,58 +2,63 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.Arrays;
 
+//**********************************************************
+//Purpose: 
+//         
+//Author: 
+//Class:    CS1301
+//Date:     11/28/2018
+//
+//**********************************************************
 
+import java.util.Scanner;
 public class QuadraticEquation10{
-  private static double a, b, c;
-  
-  public static void main(String [] args){
-    readData();
-    displayOutput();
-  
-  }
-  
-  
-  public static void readData(){
-  
-    double a1 = 1;
-    double b1 = 1;
-    double c1 = 1;
-    
-    getDiscriminant();
-    getRoot1();
-    getRoot2();
+   private double a;
+   private double b;
+   private double c;
+   
+   //No-argument Constructor assigning 1 to a,b,c
+   public QuadraticEquation10(){
+      a = 1;
+      b = 1;
+      c = 1;
 
-  
-  }
-  
-  public static void getDiscriminant(){
-  
-    double x1 = ((a1))
-  }
-  
-  public static void getRoot1(){
-  
-  
-  }
-  
-  public static void getRoot2(){
-  
-  
-  }
-  
-  public static void displayOutput(){
-  
-    System.out.println("The discriminant of your equation is" + answer1 );
-    
-  
-    System.out.println();
-
-  
-  }
-  
-
-
-}
+   }
+   //Constructor for the arguments a,b,c
+   public QuadraticEquation10(double a1, double b1, double c1){
+      a = a1;
+      b = b1;
+      c = c1;
+   }
+   //getter methods for a,b,c
+   public double getA(){
+      return a; 
+   }
+   public double getB(){
+      return b;
+   }
+   public double getC(){
+      return c;
+   }
+   //setter methods for a,b,c 
+   public double setA(double a){
+      this.a = a;
+      return a;
+   }
+   public double setB(double b){
+      this.b = b;
+      return b;
+   }
+   public double setC(double c){
+      this.c = c;
+      return c;
+   }
+   
+   //getDiscriminant() method finds the discriminant using b2-4ac
+   public double getDiscriminant(){
+      return ((b*b) - 4* a* c);
+   }
+}//maybe this tag may fix the syntax error   
 
 //Sample input: 1.0 3  1  1 2.0 1  1.0 2.0  3.0
 //
