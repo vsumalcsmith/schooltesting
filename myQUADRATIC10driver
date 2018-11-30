@@ -1,10 +1,12 @@
+import java.util.*;
+
 //*****************************************************************
 //Purpose:  A driver to invoke and use QuadraticEquation10 methods
 //
 //Course:   CS 1301
 //Date:     11/14/2018
 //
-//Author:   Fares
+//Author:   Fares & Malcolm Smith Jr. Group #10R
 //****************************************************************
 public class MyQuadraticEquation10{
    public static void main(String [ ] arg){
