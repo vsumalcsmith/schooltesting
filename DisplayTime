@@ -1,0 +1,25 @@
+import java.util.*;
+import java.util.Scanner;
+
+
+//learning the basic of 
+
+public class DisplayTime{
+
+  public static void main(String [] args){
+  
+   Scanner input = new Scanner(System.in);
+   
+   System.out.print("enter an integer for seconds: ");
+   int seconds = input.nextInt();
+   
+   // understanding the main way to return 
+   int minutes = seconds / 60;
+   // undestanding the main important part of %%%%%
+   int rseconds = seconds % 60;
+   
+   
+   System.out.println(+ " seconds is " + + "");
+  }
+
+}
