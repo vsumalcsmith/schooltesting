@@ -1,0 +1,66 @@
+import java.util.Scanner;
+import java.util.Date;
+import java.util.*;
+
+public class CodingBat{
+
+
+  private static int age;
+  //private static double;
+  //private static char;
+  private static String firstName, lastName, course;
+  //private static long;
+  //private static short;
+  //private static byte;
+  //private static boolean;
+  private static Date dateCreated;
+  
+  
+  public static void main(String [] args){
+    readDataString();
+    readDataInt();
+    displayOutput();
+    
+  }
+  
+  
+  public static void readDataString(){
+    Scanner input = new Scanner(System.in);
+    
+    System.out.println("What's your first name?");
+    firstName = input.nextLine();
+    
+    System.out.println("What's your last name?");
+    lastName = input.nextLine();
+    
+    System.out.println("What course are you in?");
+    course = input.nextLine();
+
+    
+    
+    
+  }
+  
+  public static void readDataInt(){
+    Scanner input = new Scanner(System.in);
+    
+    
+    System.out.println("What's your age?");
+    age = input.nextInt();
+    
+    dateCreated = new Date();
+    
+//     System.out.println("What's your lastt name?");
+  }
+  
+  
+  public static void displayOutput(){
+    System.out.println("Date: " + dateCreated.toString());
+    System.out.printf("\n\t%-20s%-20s","First Name:", firstName);
+    System.out.printf("\n\t%-20s%-20s","Last Name:", lastName);
+    System.out.printf("\n\t%-20s%-20s","Date:", dateCreated.toString());
+
+
+  }
+
+}
