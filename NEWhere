@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class PimeNew{
+
+
+ public static boolean isPrime(int x){
+
+
+
+    for(int i = 2; i <= Math.sqrt(x); i++){
+      if(x % i == 0){
+        return false;
+      }
+    }
+    return true;
+
+
+  }
+  
+  
+  public static int printPrimeNumbers(){
+  
+  
+  }
+
+
+  public static void main(String [] args){
+  
+  Scanner input = new Scanner(System.in);
+  
+  
+  System.out.println("Enter the number you would like to know is prime!");
+  int num = input.nextInt();
+  
+   isPrime(num);
+   
+   if(isPrime(num)){
+     System.out.println("The number you entered is a Prime");
+   }
+   else
+     System.out.println("This is not a prime number");
+     
+     
+     
+     
+   printPrimeNumbers(num);  
+
+  }
+   
+  
+  
+}   
