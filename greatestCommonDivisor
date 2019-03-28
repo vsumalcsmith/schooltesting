@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+
+public class greatestCommonDivisor{
+
+
+  public static void printGCD(int x, int y){
+  
+
+  int gcd = 0;
+  int k = 2;
+  
+    while(k <= x && k <= y){
+      if(x % k == 0 && y % k == 0)
+        gcd = k;
+      k++;  
+    }
+    
+    
+  System.out.println("the gcd of " + x + " and " + y + " is " + gcd);  
+  }
+  
+  
+  public static void main(String [] args){
+
+  
+  Scanner input = new Scanner(System.in);
+  
+  
+  System.out.println("Enter two numbers");
+  int num1 = input.nextInt();
+  int num2 = input.nextInt();
+  
+  
+  printGCD(num1, num2);
+
+
+
+  }
+
+}
