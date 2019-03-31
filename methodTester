@@ -1,0 +1,74 @@
+public class MethodBuilder{
+
+  //private static int test1, test2;
+
+  public static void main(String [] args){
+  
+    Scanner input = new Scanner(System.in);
+    
+    
+    System.out.println("Enter two values: ");
+    int test1 = input.nextInt();
+    int test2 = input.nextInt();
+    
+    getGCD(test1,test2);
+  
+  }
+  
+  
+  public static boolean isPrime(int c){
+  
+  
+    for(int i = 2; i <= Math.sqrt(c); i++){
+      if(c % i == 0){
+        return false;
+      }  
+    } 
+    return true;
+  
+  }
+  
+//   
+//   public static double getGCD(int h, int v){
+//   
+//   
+//     double gcd1 = 0;
+//     double k1 = 2;
+//     
+//      while(k1 <= h && k1 <= v){
+//         if(h % k1 == 0 && v % k1 == 0){
+//           gcd1 = k1;
+//           k1++;
+//         }
+//       }
+//       
+//     System.out.println("The GCD of " + h + " and " + v + " is " + gcd1);  
+//   
+// 
+//   
+//   }
+//   
+  
+  public static void getGCD(int x, int y){
+    
+  
+    
+    
+    double gcd = 0;
+    double k = 2;
+    
+    
+      while(k <= x && k <= y){
+        if(x % k == 0 && y % k == 0){
+          gcd = k;
+          k++;
+        }
+      }
+      
+    System.out.println("The GCD of " + x + " and " + y + " is " + gcd);  
+  
+ // break;
+  }
+
+
+}
