@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class lab56{
+  private static int num1, largest;
+
+  public static int getIndexOfLargest(int[] x){
+    if ( x == null || x.length == 0 )
+     return -1; // null or empty
+    largest = 0;
+    for ( int i = 1; i < x.length; i++ ){
+      if ( x[i] > x[largest] ) largest = i;
+    }
+    return largest; 
+    
+  }
+  
+  
+  
+  
+  public static void main(String [] args){
+  
+  
+  
+  Scanner input = new Scanner(System.in);
+  
+   System.out.println("How many elements do you want to hold in the array");
+    num1 = input.nextInt();
+    
+    
+    
+    
+        
+    int [] test1 = new int [num1];
+    
+
+   // indexOfLargestElement(test1);
+    
+    System.out.println("Enter the array values");
+    for(int y = 0; y < test1.length; y++){
+      test1[y] = input.nextInt();
+    } 
+    
+
+  getIndexOfLargest(test1);
+  System.out.println("The largest index value of the array is " + largest);
+  
+  
+  
+  }
+
+}
