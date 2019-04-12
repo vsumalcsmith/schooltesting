@@ -1,0 +1,335 @@
+import java.util.Scanner;
+import java.util.Date;
+
+
+public class HereNow{
+  
+  private static int total;
+  private static Date dateCreated;
+  private static String name, course;
+
+  public static void main(String [] args){
+    
+    readData();
+    printHeader();
+    birthdayGuess();
+    computeAverage();
+    showingTheTime();
+    saleTax();
+    minThree();
+    leapYear();
+  
+    Scanner input = new Scanner(System.in);
+    
+    System.out.println("\nEnter the number of rows followed by the nuumber of columns you would like the array to have: ");
+    int row = input.nextInt();
+    int column = input.nextInt();
+    
+    
+    
+    int [][] newLife = new int [row][column];
+    
+    int [][] moveLater = {
+                         {3,5,6,7}, 
+                         {5,2,3,4},
+                         };
+                         
+                         
+    //generate random values for 2d array here                                               
+    System.out.println("I'm now generating random values for this array! ");
+    for(int q = 0; q < newLife.length; q++){
+      for(int w = 0; w < newLife[q].length; w++){
+        newLife[q][w]=(int) Math.random() ;
+      }
+    }
+    
+    
+    
+    //print the array with random values here
+    System.out.println("\nI'm now printing the two d array with random values here");
+    for(int e = 0; e< newLife.length; e++){
+      for(int r = 0; r <newLife[e].length; r++){
+        System.out.print(newLife[e][r]+ " ");
+      }
+    }
+    
+    
+    //print the array i set values in here
+    System.out.println("\n\n\nGIVE THE THING SOME SPACE\n\n\n");
+    for(int t = 0; t< moveLater.length; t++){
+      for(int y = 0; y < moveLater[t].length; y++){
+        System.out.print(moveLater[t][y] + " ");
+      }
+    }
+    
+    
+    //this finds all the element totals in a 2D array
+    for(int p = 0; p <moveLater.length; p++){
+      for(int a = 0; a < moveLater[p].length; a++){
+        total += moveLater[p][a];
+      }
+    }
+    //this prints the elements total from the 2D array
+    System.out.println("The elements of the 2D array is " + total);
+    
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  public static void readData(){
+  
+    Scanner input = new Scanner(System.in);
+    
+    System.out.println("Enter your name here: ");
+    name = input.nextLine();
+    
+    System.out.println("\nEnter the course you are currently taking here: ");
+    course = input.nextLine();
+    
+    //this is creating the date object 
+    dateCreated = new Date();
+    
+  }
+  
+  
+  
+  
+  
+  public static void printHeader(){
+    System.out.println("\n\t***************************************");
+    
+    //this is normal format for printing name
+    System.out.println("\n\tYour name is: " + name);
+    //this is specific format for printing name
+    System.out.printf("\n\t%-20s%-20s","Name: ",name);
+    
+    
+    //this is normal format for printing course
+    System.out.println("\n\tYour course is: " + course);
+     //this is specific format for printing course
+    System.out.printf("%-5s%-5s","Course entered: ",course);
+    
+    
+    System.out.printf("\n\t%-5s%-5s" , "Date:" ,dateCreated.toString());
+    
+
+    
+  }
+  
+  
+  
+  
+  
+  public static void birthdayGuess(){
+  
+  
+    String set1 =
+      " 1  3  5  7\n" +
+      " 9 11 13 15\n" +
+      "17 19 21 23\n" +
+      "25 27 29 31";
+
+    String set2 =
+      " 2  3  6  7\n" +
+      "10 11 14 15\n" +
+      "18 19 22 23\n" +
+      "26 27 30 31";
+
+    String set3 =
+      " 4  5  6  7\n" +
+      "12 13 14 15\n" +
+      "20 21 22 23\n" +
+      "28 29 30 31";
+
+    String set4 =
+      " 8  9 10 11\n" +
+      "12 13 14 15\n" +
+      "24 25 26 27\n" +
+      "28 29 30 31";
+
+    String set5 =
+      "16 17 18 19\n" +
+      "20 21 22 23\n" +
+      "24 25 26 27\n" +
+      "28 29 30 31";
+
+    int day = 0;
+
+    // Create a Scanner
+    Scanner input = new Scanner(System.in);
+
+    // Prompt the user to answer questions
+    System.out.print("Is your birthday in Set1?\n");
+    System.out.print(set1);
+    System.out.print("\nEnter 0 for No and 1 for Yes: ");
+    int answer = input.nextInt();
+
+    if (answer == 1)
+      day += 1;
+
+    // Prompt the user to answer questions
+    System.out.print("\nIs your birthday in Set2?\n");
+    System.out.print(set2);
+    System.out.print("\nEnter 0 for No and 1 for Yes: ");
+    answer = input.nextInt();
+
+    if (answer == 1)
+      day += 2;
+
+    // Prompt the user to answer questions
+    System.out.print("Is your birthday in Set3?\n");
+    System.out.print(set3);
+    System.out.print("\nEnter 0 for No and 1 for Yes: ");
+    answer = input.nextInt();
+
+    if (answer == 1)
+      day += 4;
+
+    // Prompt the user to answer questions
+    System.out.print("\nIs your birthday in Set4?\n");
+    System.out.print(set4);
+    System.out.print("\nEnter 0 for No and 1 for Yes: ");
+    answer = input.nextInt();
+
+    if (answer == 1)
+      day += 8;
+
+    // Prompt the user to answer questions
+    System.out.print("\nIs your birthday in Set5?\n");
+    System.out.print(set5);
+    System.out.print("\nEnter 0 for No and 1 for Yes: ");
+    answer = input.nextInt();
+
+    if (answer == 1)
+      day += 16;
+
+    System.out.println("\nYour birthday is " + day + "!");
+  
+  }
+  
+  
+  
+  
+  //compute average start here
+  public static void computeAverage(){
+  
+  
+  
+    Scanner input = new Scanner(System.in);
+    System.out.print("Enter three numbers: ");
+    double number1 = input.nextDouble();
+    double number2 = input.nextDouble();
+    double number3 = input.nextDouble();
+
+    // Compute average
+    double average = (number1 + number2 + number3) / 3;
+
+    // Display result
+    System.out.println("The average of " + number1 + " " + number2 + " " + number3 + " is " + average);
+
+   }
+  
+  
+  
+  //showing the time start here
+  public static void showingTheTime(){
+  
+     // Obtain the total milliseconds since midnight, Jan 1, 1970
+    long totalMilliseconds = System.currentTimeMillis();
+
+    // Obtain the total seconds since midnight, Jan 1, 1970
+    long totalSeconds = totalMilliseconds / 1000;
+
+    // Compute the current second in the minute in the hour
+    long currentSecond = (int)(totalSeconds % 60);
+
+    // Obtain the total minutes
+    long totalMinutes = totalSeconds / 60;
+
+   // Compute the current minute in the hour
+   long currentMinute = totalMinutes % 60;
+
+   // Obtain the total hours
+   long totalHours = totalMinutes / 60;
+
+   // Compute the current hour
+   long currentHour = totalHours % 24;
+
+   // Display results
+   System.out.println("Current time is " + currentHour + ":" + currentMinute + ":" + currentSecond + " GMT");
+
+  } 
+  
+  public static void saleTax(){
+  
+    Scanner input = new Scanner(System.in);
+
+    System.out.print("Enter purchase amount: ");
+    double purchaseAmount = input.nextDouble();
+    
+    double tax = purchaseAmount * 0.06;
+    System.out.println("Sales tax is " + (int)(tax * 100) / 100.0);
+    
+    
+  }
+  
+  
+  public static void minThree(){
+  
+    int num1, num2, num3, min = 0;
+     
+     Scanner input = new Scanner(System.in);
+     
+     System.out.println("enter three integers :");
+     
+     num1 = input.nextInt();
+     num2 = input.nextInt();
+     num3 = input.nextInt();
+     
+     if(num1 < num2)
+         if(num1 < num3)
+           min = num1;
+         else
+           min = num3;
+     else
+         if(num2 < num3)
+           min = num2;
+         else
+           min = num3;
+   System.out.println("minimum value is " + min);
+  }
+  
+  
+  
+  
+  
+  
+
+  public static void leapYear(){
+    // Create a Scanner
+    Scanner input = new Scanner(System.in);
+   System.out.print("Enter a year: ");
+   int year = input.nextInt();
+
+   // Check if the year is a leap year
+   boolean isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0) ;
+   // Display the result
+   System.out.println(year + " is a leap year? " + isLeapYear);  
+  }
+
+
+
+
+
+
+
+
+}
