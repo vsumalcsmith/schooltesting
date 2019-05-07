@@ -10,7 +10,7 @@ public class 2D{
   }
   
   
-  public static int [][] getArray(int [][] x){
+  public static int [][] getArray(){
   
   Scanner input = new Scanner(System.in);
   
