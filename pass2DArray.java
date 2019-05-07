@@ -9,7 +9,7 @@ public class 2D{
     
   }
   
-  
+  //this getArray method does not have a parameter
   public static int [][] getArray(){
   
   Scanner input = new Scanner(System.in);
