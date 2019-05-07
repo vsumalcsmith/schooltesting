@@ -13,10 +13,10 @@ public class 2D{
   public static int [][] getArray(){
   
   Scanner input = new Scanner(System.in);
-  
-    for(int r = 0; i < x.length; i++){
-      for(int c = 0; c < x[r].length; c++){
-        x[r][c] = input.nextInt();
+  int [][] x = new int [r][c];
+    for(int e = 0; e < x.length; e++){
+      for(int t = 0; t < t[e].length; t++){
+        x[e][t] = input.nextInt();
       }
     }
   }
